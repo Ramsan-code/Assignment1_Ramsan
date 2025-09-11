@@ -5,14 +5,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies Finder</title>
-    <link rel="stylesheet" href="/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: #333 !important;
+            background-color: yellow;
+        }
+        .nav-buttons a {
+            margin: 0 10px;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .nav-buttons a:hover {
+            text-decoration: underline;
+        }
+
+        .box {
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .abc h5 {
+            margin-bottom: 15px;
+        }
+
+        .abc a {
+            margin: 0 8px;
+            /* color: #007bff; */
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .abc a:hover {
+            background-color: #e3f2fd;
+            text-decoration: none;
+        }
+
+        #cards-many {
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 1800px;
+            align-items: center;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .card-header input {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .card-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Show<b>Track</b></a>
@@ -22,7 +127,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto ">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
                     </li>
@@ -30,184 +135,186 @@
                         <a class="nav-link" href="/add.html">Add</a>
                     </li>
                 </ul>
-                <div>
+                <div class="nav-buttons">
                     <a href="/login.html">Login</a>
                     <a href="/signup.html">Signup</a>
                 </div>
             </div>
         </div>
     </nav>
-       
+
     <div class="box">
         <div class="abc">
-            <h5>0-9
-                <a href="#">A</a>
-                <a href="#">B</a>
-                <a href="#">C</a>
-                <a href="#">D</a>
-                <a href="#">E</a>
-                <a href="#">F</a>
-                <a href="#">G</a>
-                <a href="#">H</a>
-                <a href="#">I</a>
-                <a href="#">J</a>
-                <a href="#">K</a>
-                <a href="#">L</a>
-                <a href="#">M</a>
-                <a href="#">N</a>
-                <a href="#">O</a>
-                <a href="#">P</a>
-                <a href="#">Q</a>
-                <a href="#">R</a>
-                <a href="#">S</a>
-                <a href="#">T</a>
-                <a href="#">U</a>
-                <a href="#">V</a>
-                <a href="#">W</a>
-                <a href="#">X</a>
-                <a href="#">Y</a>
-                <a href="#">Z</a>
-            </h5>
+            <a href="#">0-9</a>
+            <a href="#">A</a>
+            <a href="#">B</a>
+            <a href="#">C</a>
+            <a href="#">D</a>
+            <a href="#">E</a>
+            <a href="#">F</a>
+            <a href="#">G</a>
+            <a href="#">H</a>
+            <a href="#">I</a>
+            <a href="#">J</a>
+            <a href="#">K</a>
+            <a href="#">L</a>
+            <a href="#">M</a>
+            <a href="#">N</a>
+            <a href="#">O</a>
+            <a href="#">P</a>
+            <a href="#">Q</a>
+            <a href="#">R</a>
+            <a href="#">S</a>
+            <a href="#">T</a>
+            <a href="#">U</a>
+            <a href="#">V</a>
+            <a href="#">W</a>
+            <a href="#">X</a>
+            <a href="#">Y</a>
+            <a href="#">Z</a>
+
         </div>
+
         <div class="click">
-            <button>Action</button>
+            <button>Sci-fi</button>
             <button>Adventure</button>
-            <button>Animation</button>
-            <button>Children</button>
-            <button>Comedy</button>
             <button>Crime</button>
-            <button>Documentary</button>
-            <button>Drama</button>
-            <button>Family</button>
-            <button>Fantasy</button>
-            <button>Food</button>
-            <button>Home and Garden</button>
             <button>Horror</button>
-            <button>Mini Series</button>
+            <button>Drama</button>
+            <button>Fantasy</button>
+            <button>Sci-fi crime</button>
+            <button>Viloance</button>
+            <button>Political</button>
+            <button>Adult</button>
             <button>Mystery</button>
             <button>News</button>
-            <button>Reality</button>
+            <button>Realstory</button>
             <button>Romance</button>
-            <button>Sci-Fi</button>
+            <button>Science</button>
             <button>Sport</button>
             <button>Suspense</button>
-            <button>Talk Show</button>
+            <button>family-drama</button>
             <button>Thriller</button>
-            <button>Travel</button>
+            <button>Psycho</button>
+            <button>Suspense</button>
+            <button>family-drama</button>
+            <button>Thriller</button>
+            <button>Psycho</button>
         </div>
     </div>
+
+
     <div class="card" id="cards-many">
         <div class="card-header">
             <b>Top 12 SHOWS</b>
-            <input type="text" name="text" id="enter-text" placeholder="Search">
+            <input type="text" name="text" id="enter-text" placeholder="Search shows...">
         </div>
+
         <div class="card-group">
             <div class="card" style="width: 18rem;">
                 <img src="/assets/images/game_of_thrones.jpeg" class="card-img-top" alt="game_of_thrones"
                     style="height: 300px;">
                 <div class="card-body">
-                    <h5 class="card-title">Game_of_thrones</h5>
-                    <p class="card-text"><small class="text-body-secondary">Episode:84</small></p>
+                    <h5 class="card-title">Game of Thrones</h5>
+                    <p class="card-text"><small class="text-body-secondary">Episodes: 73</small></p>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="/assets/images/breaking_bad.webp" class="card-img-top" alt="breaking_bad"
                     style="height: 300px;">
                 <div class="card-body">
-                    <h5 class="card-title">Breaking_bad</h5>
-                    <p class="card-text"><small class="text-body-secondary">Episode:79</small></p>
+                    <h5 class="card-title">Breaking Bad</h5>
+                    <p class="card-text"><small class="text-body-secondary">Episodes: 62</small></p>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="/assets/images/dexter.jpeg" class="card-img-top" alt="dexter" style="height: 300px;">
                 <div class="card-body">
                     <h5 class="card-title">Dexter</h5>
-                    <p class="card-text"><small class="text-body-secondary">Episode:125</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Episodes: 96</small></p>
                 </div>
             </div>
-
             <div class="card" style="width: 18rem;">
                 <img src="/assets/images/how_i_met_your_mother.jpeg" class="card-img-top" alt="how_i_met_your_mother"
                     style="height: 300px;">
                 <div class="card-body">
                     <h5 class="card-title">How I Met Your Mother</h5>
-                    <p class="card-text"><small class="text-body-secondary">Episode:249</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Episodes: 208</small></p>
                 </div>
             </div>
         </div>
+
         <div class="card-group">
             <div class="card" style="width: 18rem;">
-                <img src="/assets/images/dunkirk.jpeg" class="card-img-top" alt="dunkirk"
-                    style="height: 300px;">
+                <img src="/assets/images/dunkirk.jpeg" class="card-img-top" alt="dunkirk" style="height: 300px;">
                 <div class="card-body">
                     <h5 class="card-title">Dunkirk</h5>
-                    <p class="card-text"><small class="text-body-secondary">Nolan:5</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Director: Nolan</small></p>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
-                <img src="/assets/images/inception.jpeg" class="card-img-top" alt="inception"
-                    style="height: 300px;">
+                <img src="/assets/images/inception.jpeg" class="card-img-top" alt="inception" style="height: 300px;">
                 <div class="card-body">
                     <h5 class="card-title">Inception</h5>
-                    <p class="card-text"><small class="text-body-secondary">Nolan:7</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Director: Nolan</small></p>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
-                <img src="/assets/images/intersteeller.jpeg" class="card-img-top" alt="intersteeller" style="height: 300px;">
-                <div class="card-body">
-                    <h5 class="card-title">Intersteeller</h5>
-                    <p class="card-text"><small class="text-body-secondary">Nolan:8</small></p>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="/assets/images/once_upon_time_in_hollywood.webp" class="card-img-top" alt="once_upon_time_in_hollywood"
+                <img src="/assets/images/intersteeller.jpeg" class="card-img-top" alt="interstellar"
                     style="height: 300px;">
                 <div class="card-body">
-                    <h5 class="card-title">Once_upon_time_in_hollywood</h5>
-                    <p class="card-text"><small class="text-body-secondary">Torantino:7</small></p>
+                    <h5 class="card-title">Interstellar</h5>
+                    <p class="card-text"><small class="text-body-secondary">Director: Nolan</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="/assets/images/once_upon_time_in_hollywood.webp" class="card-img-top"
+                    alt="once_upon_time_in_hollywood" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title">Once Upon a Time in Hollywood</h5>
+                    <p class="card-text"><small class="text-body-secondary">Director: Tarantino</small></p>
                 </div>
             </div>
         </div>
+
         <div class="card-group">
             <div class="card" style="width: 18rem;">
                 <img src="/assets/images/oppenheimer.jpeg" class="card-img-top" alt="oppenheimer"
                     style="height: 300px;">
                 <div class="card-body">
                     <h5 class="card-title">Oppenheimer</h5>
-                    <p class="card-text"><small class="text-body-secondary">Nolan:9</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Director: Nolan</small></p>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
-                <img src="/assets/images/tenet.jpeg" class="card-img-top" alt="tenet"
-                    style="height: 300px;">
+                <img src="/assets/images/tenet.jpeg" class="card-img-top" alt="tenet" style="height: 300px;">
                 <div class="card-body">
                     <h5 class="card-title">Tenet</h5>
-                    <p class="card-text"><small class="text-body-secondary">Nolan:6</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Director: Nolan</small></p>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="/assets/images/the_odyssey.jpeg" class="card-img-top" alt="odyssey" style="height: 300px;">
                 <div class="card-body">
-                    <h5 class="card-title">Odyssey</h5>
-                    <p class="card-text"><small class="text-body-secondary">Nolan:1</small></p>
+                    <h5 class="card-title">The Odyssey</h5>
+                    <p class="card-text"><small class="text-body-secondary">Director: Nolan</small></p>
                 </div>
             </div>
-
             <div class="card" style="width: 18rem;">
-                <img src="/assets/images/utthama_villan.jpeg" class="card-img-top" alt="utthama_villan"
+                <img src="/assets/images/utthama_villan.jpeg" class="card-img-top" alt="uttama_villain"
                     style="height: 300px;">
                 <div class="card-body">
-                    <h5 class="card-title">Utthama Villan</h5>
-                    <p class="card-text"><small class="text-body-secondary">Kamal:155</small></p>
+                    <h5 class="card-title">Uttama Villain</h5>
+                    <p class="card-text"><small class="text-body-secondary">Actor: Kamal Haasan</small></p>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="/js/home.js"></script>
+
 </body>
 
 </html>
